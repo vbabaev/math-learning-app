@@ -17,10 +17,9 @@ const Question = ({ question, onAnswer }) => {
     setAnswer('');
   };
 
-  return (
-    <form onSubmit={handleSubmit} className="mb-3">
-      <div className="input-group">
-        <span className="input-group-text">{`${question.firstOperand} ${operationSymbols[question.operation]} ${question.secondOperand} = `}</span>
+  const renderField = (position) => {
+    if (question.blankPosition === position) {
+      return (
         <input
           type="number"
           className="form-control"
@@ -28,6 +27,26 @@ const Question = ({ question, onAnswer }) => {
           onChange={(e) => setAnswer(e.target.value)}
           required
         />
+      );
+    }
+    switch (position) {
+      case 0:
+        return question.firstOperand;
+      case 1:
+        return question.secondOperand;
+      case 2:
+        return question.result;
+      default:
+        return '';
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="mb-3">
+      <div className="input-group">
+        <span className="input-group-text">
+          {renderField(0)} {operationSymbols[question.operation]} {renderField(1)} = {renderField(2)}
+        </span>
       </div>
       <button type="submit" className="btn btn-success mt-3">Submit</button>
     </form>

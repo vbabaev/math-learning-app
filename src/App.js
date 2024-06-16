@@ -39,7 +39,13 @@ const App = () => {
 
   const handleAnswer = (answer, questionIndex) => {
     const currentQuestion = questions[questionIndex];
-    const isCorrect = parseInt(answer) === currentQuestion.result;
+    const correctAnswer =
+      currentQuestion.blankPosition === 0
+        ? currentQuestion.firstOperand
+        : currentQuestion.blankPosition === 1
+        ? currentQuestion.secondOperand
+        : currentQuestion.result;
+    const isCorrect = parseInt(answer) === correctAnswer;
     setResults(prev => [...prev, { ...currentQuestion, isCorrect }]);
     if (isCorrect) {
       setCorrectAnswers(prev => prev + 1);
