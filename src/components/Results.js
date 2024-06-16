@@ -2,7 +2,7 @@
 import React from 'react';
 import Stats from './Stats';
 
-const Results = ({ correctAnswers, totalQuestions, timeElapsed, results }) => {
+const Results = ({ correctAnswers, totalQuestions, timeElapsed, results, retrySession }) => {
   return (
     <div className="container mt-4">
       <h2>Session Ended</h2>
@@ -19,6 +19,7 @@ const Results = ({ correctAnswers, totalQuestions, timeElapsed, results }) => {
           <li key={index} className="list-group-item">{`${result.firstOperand} ${result.operation} ${result.secondOperand} = ${result.result}`}</li>
         ))}
       </ul>
+      <button className="btn btn-primary mt-4" onClick={retrySession}>Try Again</button>
     </div>
   );
 };

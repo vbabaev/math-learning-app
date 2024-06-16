@@ -1,8 +1,8 @@
 // src/App.js
 import React, { useState, useEffect } from 'react';
 import Results from './components/Results';
-import SessionControls from './components/SessionControls';
 import QuestionIteration from './components/QuestionIteration';
+import Setup from './components/Setup';
 import { generateQuestions } from './questionGenerator';
 import './App.css';
 
@@ -15,6 +15,7 @@ const App = () => {
   const [isRunning, setIsRunning] = useState(false);
   const [numQuestions, setNumQuestions] = useState(10);
   const [results, setResults] = useState([]);
+  const [page, setPage] = useState('setup'); // 'setup', 'session', 'results'
 
   useEffect(() => {
     let timer;
@@ -66,17 +67,23 @@ const App = () => {
     setTimeElapsed(0);
     setResults([]);
     setIsRunning(true);
+    setPage('session');
   };
 
   const endSession = () => {
     setIsRunning(false);
+    setPage('results');
+  };
+
+  const retrySession = () => {
+    setPage('setup');
   };
 
   return (
     <div className="App container mt-4">
       <h1 className="text-center">Math Learning App</h1>
-      {!isRunning && (
-        <SessionControls
+      {page === 'setup' && (
+        <Setup
           selectedGenerators={selectedGenerators}
           handleGeneratorChange={handleGeneratorChange}
           numQuestions={numQuestions}
@@ -85,21 +92,21 @@ const App = () => {
           isRunning={isRunning}
         />
       )}
-      {isRunning ? (
+      {page === 'session' && (
         <QuestionIteration 
           questions={questions}
           handleAnswer={handleAnswer}
           endSession={endSession}
         />
-      ) : (
-        totalQuestions > 0 && (
-          <Results
-            correctAnswers={correctAnswers}
-            totalQuestions={totalQuestions}
-            timeElapsed={timeElapsed}
-            results={results}
-          />
-        )
+      )}
+      {page === 'results' && (
+        <Results
+          correctAnswers={correctAnswers}
+          totalQuestions={totalQuestions}
+          timeElapsed={timeElapsed}
+          results={results}
+          retrySession={retrySession}
+        />
       )}
     </div>
   );
