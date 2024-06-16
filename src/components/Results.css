@@ -1,0 +1,17 @@
+/* src/components/Results.css */
+
+.incorrect {
+    color: red;
+    text-decoration: line-through;
+  }
+  
+  .correct {
+    color: blue;
+    font-weight: bold;
+  }
+  
+  .correct-green {
+    color: green;
+    font-weight: bold;
+  }
+  

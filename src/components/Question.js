@@ -1,5 +1,5 @@
 // src/components/Question.js
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Question.css';
 
 const operationSymbols = {
@@ -11,6 +11,13 @@ const operationSymbols = {
 
 const Question = ({ question, onAnswer }) => {
   const [answer, setAnswer] = useState('');
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [question]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,6 +34,7 @@ const Question = ({ question, onAnswer }) => {
           value={answer}
           onChange={(e) => setAnswer(e.target.value)}
           required
+          ref={inputRef}
         />
       );
     }
