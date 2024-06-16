@@ -10,19 +10,23 @@ const QuestionTypes = ({ selectedGenerators, handleGeneratorChange, isRunning })
   };
 
   return (
-    <div>
-      <label>Select Question Types:</label>
-      <div>
+    <div className="mb-3">
+      <label className="form-label">Select Question Types:</label>
+      <div className="form-check">
         {Object.keys(questionGenerators).map(generator => (
-          <div key={generator}>
+          <div key={generator} className="form-check">
             <input
+              className="form-check-input"
               type="checkbox"
               value={generator}
+              id={`checkbox-${generator}`}
               checked={selectedGenerators.includes(generator)}
               onChange={handleGeneratorChange}
               disabled={isRunning}
             />
-            <label>{questionGenerators[generator]}</label>
+            <label className="form-check-label" htmlFor={`checkbox-${generator}`}>
+              {questionGenerators[generator]}
+            </label>
           </div>
         ))}
       </div>

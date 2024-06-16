@@ -15,7 +15,9 @@ const QuestionIteration = ({ questions, handleAnswer, endSession }) => {
   };
 
   return (
-    <Question question={questions[currentQuestionIndex]} onAnswer={onAnswer} />
+    <div className="container mt-4">
+      <Question question={questions[currentQuestionIndex]} onAnswer={onAnswer} />
+    </div>
   );
 };
 

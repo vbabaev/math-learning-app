@@ -18,17 +18,18 @@ const Question = ({ question, onAnswer }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>{`${question.firstOperand} ${operationSymbols[question.operation]} ${question.secondOperand} = `}</label>
+    <form onSubmit={handleSubmit} className="mb-3">
+      <div className="input-group">
+        <span className="input-group-text">{`${question.firstOperand} ${operationSymbols[question.operation]} ${question.secondOperand} = `}</span>
         <input
           type="number"
+          className="form-control"
           value={answer}
           onChange={(e) => setAnswer(e.target.value)}
           required
         />
       </div>
-      <button type="submit">Submit</button>
+      <button type="submit" className="btn btn-success mt-3">Submit</button>
     </form>
   );
 };

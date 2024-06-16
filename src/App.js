@@ -67,8 +67,8 @@ const App = () => {
   };
 
   return (
-    <div className="App">
-      <h1>Math Learning App</h1>
+    <div className="App container mt-4">
+      <h1 className="text-center">Math Learning App</h1>
       {!isRunning && (
         <SessionControls
           selectedGenerators={selectedGenerators}

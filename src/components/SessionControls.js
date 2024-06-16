@@ -12,7 +12,7 @@ const SessionControls = ({
   isRunning
 }) => {
   return (
-    <div>
+    <div className="container mt-4">
       <QuestionTypes
         selectedGenerators={selectedGenerators}
         handleGeneratorChange={handleGeneratorChange}
@@ -23,7 +23,7 @@ const SessionControls = ({
         handleNumQuestionsChange={handleNumQuestionsChange}
         isRunning={isRunning}
       />
-      <button onClick={startSession} disabled={isRunning}>Start Session</button>
+      <button className="btn btn-primary mt-3" onClick={startSession} disabled={isRunning}>Start Session</button>
     </div>
   );
 };
