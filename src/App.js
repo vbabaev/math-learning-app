@@ -55,10 +55,6 @@ const App = () => {
   };
 
   const startSession = () => {
-    if (selectedGenerators.length === 0) {
-      alert("Please select at least one type of question.");
-      return;
-    }
     const generatedQuestions = generateQuestions(selectedGenerators, numQuestions);
 
     setQuestions(generatedQuestions);
@@ -89,7 +85,6 @@ const App = () => {
           numQuestions={numQuestions}
           handleNumQuestionsChange={handleNumQuestionsChange}
           startSession={startSession}
-          isRunning={isRunning}
         />
       )}
       {page === 'session' && (
