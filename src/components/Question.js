@@ -1,5 +1,6 @@
 // src/components/Question.js
 import React, { useState } from 'react';
+import './Question.css';
 
 const operationSymbols = {
   '+': '+',
@@ -22,7 +23,7 @@ const Question = ({ question, onAnswer }) => {
       return (
         <input
           type="number"
-          className="form-control"
+          className="answer-input"
           value={answer}
           onChange={(e) => setAnswer(e.target.value)}
           required
@@ -42,14 +43,18 @@ const Question = ({ question, onAnswer }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mb-3">
-      <div className="input-group">
-        <span className="input-group-text">
-          {renderField(0)} {operationSymbols[question.operation]} {renderField(1)} = {renderField(2)}
-        </span>
-      </div>
-      <button type="submit" className="btn btn-success mt-3">Submit</button>
-    </form>
+    <div className="question-container">
+      <form onSubmit={handleSubmit} className="question-form">
+        <div className="question-grid">
+          <div className="question-item">{renderField(0)}</div>
+          <div className="question-item">{operationSymbols[question.operation]}</div>
+          <div className="question-item">{renderField(1)}</div>
+          <div className="question-item">=</div>
+          <div className="question-item">{renderField(2)}</div>
+        </div>
+        <button type="submit" className="submit-button">Submit</button>
+      </form>
+    </div>
   );
 };
 

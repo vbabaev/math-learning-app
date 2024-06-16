@@ -1,0 +1,38 @@
+/* src/components/Question.css */
+
+.question-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px); /* Adjusting for title height */
+  margin-top: 30px;
+}
+
+.question-form {
+  text-align: center;
+}
+
+.question-grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-gap: 10px;
+  font-size: 3em;
+}
+
+.question-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.answer-input {
+  font-size: 1em;
+  width: 100px;
+  text-align: center;
+}
+
+.submit-button {
+  font-size: 1em;
+  margin-top: 20px;
+  padding: 10px 20px;
+}
