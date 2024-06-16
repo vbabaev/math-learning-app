@@ -80,33 +80,35 @@ const App = () => {
   };
 
   return (
-    <div className="App container mt-4">
-      <h1 className="text-center">Math Learning App</h1>
-      {page === 'setup' && (
-        <Setup
-          selectedGenerators={selectedGenerators}
-          handleGeneratorChange={handleGeneratorChange}
-          numQuestions={numQuestions}
-          handleNumQuestionsChange={handleNumQuestionsChange}
-          startSession={startSession}
-        />
-      )}
-      {page === 'session' && (
-        <QuestionIteration 
-          questions={questions}
-          handleAnswer={handleAnswer}
-          endSession={endSession}
-        />
-      )}
-      {page === 'results' && (
-        <Results
-          correctAnswers={correctAnswers}
-          totalQuestions={totalQuestions}
-          timeElapsed={timeElapsed}
-          results={results}
-          retrySession={retrySession}
-        />
-      )}
+    <div className="App">
+      <div className="container mt-4">
+        <h1 className="text-center">Math Learning App</h1>
+        {page === 'setup' && (
+          <Setup
+            selectedGenerators={selectedGenerators}
+            handleGeneratorChange={handleGeneratorChange}
+            numQuestions={numQuestions}
+            handleNumQuestionsChange={handleNumQuestionsChange}
+            startSession={startSession}
+          />
+        )}
+        {page === 'session' && (
+          <QuestionIteration 
+            questions={questions}
+            handleAnswer={handleAnswer}
+            endSession={endSession}
+          />
+        )}
+        {page === 'results' && (
+          <Results
+            correctAnswers={correctAnswers}
+            totalQuestions={totalQuestions}
+            timeElapsed={timeElapsed}
+            results={results}
+            retrySession={retrySession}
+          />
+        )}
+      </div>
     </div>
   );
 };

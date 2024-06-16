@@ -1,7 +1,29 @@
 /* src/App.css */
+
 .App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   text-align: center;
-  margin: 20px;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+}
+
+.form-check-input {
+  transform: scale(2);
+  margin-right: 10px;
+}
+
+.form-check-label {
+  padding-left: 10px;
+}
+
+.form-check {
+  margin-bottom: 20px; /* Adds spacing between the form-check items */
 }
 
 label {
