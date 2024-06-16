@@ -9,6 +9,12 @@
 }
 
 .question-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.question-content {
   text-align: center;
 }
 
@@ -35,4 +41,13 @@
   font-size: 1em;
   margin-top: 20px;
   padding: 10px 20px;
+}
+
+.motivational-image {
+  margin-left: 20px;
+}
+
+.motivational-image img {
+  max-width: 200px;
+  max-height: 200px;
 }
