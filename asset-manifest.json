@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/math-learning-app/static/css/main.4ec9bcbd.css",
-    "main.js": "/math-learning-app/static/js/main.2d69679d.js",
+    "main.js": "/math-learning-app/static/js/main.98e489f9.js",
     "static/js/453.818a250b.chunk.js": "/math-learning-app/static/js/453.818a250b.chunk.js",
     "index.html": "/math-learning-app/index.html",
     "main.4ec9bcbd.css.map": "/math-learning-app/static/css/main.4ec9bcbd.css.map",
-    "main.2d69679d.js.map": "/math-learning-app/static/js/main.2d69679d.js.map",
+    "main.98e489f9.js.map": "/math-learning-app/static/js/main.98e489f9.js.map",
     "453.818a250b.chunk.js.map": "/math-learning-app/static/js/453.818a250b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4ec9bcbd.css",
-    "static/js/main.2d69679d.js"
+    "static/js/main.98e489f9.js"
   ]
 }
